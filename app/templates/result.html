@@ -1,0 +1,42 @@
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="mt-4"></div>
+<div class="container">
+    <form class="form-horizontal" action="/" method="POST">
+        <div class="form-group">
+            <center>
+                <h1>Buckets based on Similarity Percentage</h1>
+            </center>
+        </div>
+        <button type="submit" class="btn btn-primary pull-right">Return to Homepage</button>
+    </form>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col" style="text-align:center">Original String</th>
+                <th scope="col" style="text-align:center">String with {{selected_option}}% similarity</th>
+            </tr>
+        </thead>
+        <tbody>
+            {%for i in range(0, len)%}
+            <tr>
+                <th scope="row" style="text-align:center">{{results[i]['original_string']}}</th>
+                <td scope="row" style="text-align:center">{{results[i]['compared_string']}}</td>
+            </tr>
+            {%endfor%}
+        </tbody>
+    </table>
+</div>
+
+<style>
+  body {
+    padding-top: 60px;
+  }
+</style>
+</body>
+</html>
